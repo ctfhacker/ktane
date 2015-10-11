@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 stages = []
 positions = []
 curr_stage = 1

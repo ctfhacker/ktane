@@ -1,0 +1,17 @@
+RBSL
+0000 'cut'
+0001 'dont cut'
+0010 'cut'
+0011 '>1 battery'
+0100 'even digit'
+0101 'parallel port'
+0110 'dont cut'
+0111 'parallel port'
+1000 'even digit'
+1001 '>1 battery'
+1010 'cut'
+1011 '>1 battery'
+1100 'even digit'
+1101 'even digit'
+1110 'parallel port'
+1111 'dont cut

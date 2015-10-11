@@ -1,21 +1,19 @@
+#!/usr/bin/env python
 from collections import Counter, defaultdict
 
 words = ['about', 'after', 'again', 'below', 'could', 'every', 'first', 'found', 'great', 'house', 'large', 'learn', 'never', 'other', 'place', 'plant', 'point', 'right', 'small', 'sound', 'spell', 'still', 'study', 'their', 'there', 'these', 'thing', 'think', 'three', 'water', 'where', 'which', 'world', 'would', 'write']
 
-counts = defaultdict(Counter)
+indexes = {0: 'First', 1: 'Second'}
 
-for word in words:
-    for index, letter in enumerate(word):
-        counts[index][letter] += 1
+possibles = []
 
+for index in range(2):
+    curr_words = words[:]
+    column = raw_input("{} column of letter: ".format(indexes[index]))
+    for word in words:
+        if word[index] not in column:
+            curr_words.remove(word)
 
-for index,val in counts.iteritems():
-    for letter, num in val.iteritems():
-        if num == 1:
-            for word in words:
-                if word[index] == letter:
-                    print (index, letter), word
+    words = curr_words
 
-
-
-
+print words

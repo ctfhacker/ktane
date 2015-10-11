@@ -1,3 +1,4 @@
+#/usr/bin/env python
 wire = raw_input("""
 Enter wire (blUe, blacK, White, Yellow, Red)
 

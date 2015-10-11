@@ -1,3 +1,5 @@
+#!/usr/bin/env python
+
 meaning = {
 int('0000', 2): 'cut',
 int('0001', 2): 'dont cut',
