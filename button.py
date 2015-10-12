@@ -1,4 +1,6 @@
 #!/usr/bin/env python
+from colors import color as colorify
+
 problem = raw_input("""
 Enter color (rywb) then the word
 
@@ -9,9 +11,9 @@ color, word = problem.split()
 word = word.lower()
 
 def print_hold_colors():
-    print 'Blue - 4'
-    print 'White - 1'
-    print 'Yellow - 5'
+    print colorify('Blue - 4', 'blue')
+    print('White - 1')
+    print colorify('Yellow - 5', 'yellow')
     print 'ANY OTHER - 1'
 
 if color == 'b' and word == 'abort':

@@ -1,5 +1,6 @@
 #!/usr/bin/env python
 from collections import defaultdict
+from colors import color
 import sys
 
 mazes = {
@@ -81,7 +82,7 @@ x x|x|x|x x
   - -   -  
 x x x x|x x
 """,
-(('1','1'), ('2','6')): """
+(('2','1'), ('2','6')): """
 x x x x|x x
   - -      
 x|x x|x x|x
@@ -163,13 +164,13 @@ def easy_answer(answer):
     for index, letter in enumerate(answer):
         left = start[index:]
         if letter != curr_letter:
-            curr_answer += str(count) + curr_letter + ' '
+            curr_answer += curr_letter + str(count) + ' '
             curr_letter = letter
             count = 1
         else:
             count += 1
 
-    curr_answer += str(count) + curr_letter
+    curr_answer += curr_letter + str(count)
 
     return curr_answer
     
@@ -186,7 +187,7 @@ def traverse_maze(maze_dict, start, finish):
                     for pair in (temp_path + [new_path])[1:]:
                         answer += pair[0]
 
-                    print "Path: ", easy_answer(answer)
+                    print "Path: ", color(easy_answer(answer), 'green')
                     sys.exit(1)
                 else:
                     path.append(temp_path + [new_path])
@@ -209,6 +210,5 @@ finish = raw_input("Finish: ")
 finish = tuple([int(num) for num in finish.replace(',', '').replace(' ','')])
 
 maze = get_maze(indicator)
-print maze
 maze_dict = get_maze_dict(maze)
 traverse_maze(maze_dict, start, finish)

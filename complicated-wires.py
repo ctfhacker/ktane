@@ -1,4 +1,5 @@
 #!/usr/bin/env python
+from colors import color
 
 meaning = {
 int('0000', 2): 'cut',
@@ -31,8 +32,12 @@ for _ in xrange(6):
 
     wires.append(meaning[total])
 
-print wires
-
-
-
-
+for wire in wires:
+    for name, c in [('cut', 'green'), 
+                    ('dont cut', 'red'),
+                    ('>1 battery', 'purple'),
+                    ('even digit', 'cyan'),
+                    ('parallel port', 'blue'),
+                    ]:
+        if wire == name:
+            print color(wire, c)
